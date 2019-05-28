@@ -5,4 +5,10 @@
 #contact
 {
     list-style-type: none;
+    display: inline-flex;
+}
+
+#contact li
+{
+    padding: 1rem;
 }
