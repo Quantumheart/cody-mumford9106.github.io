@@ -9,21 +9,48 @@
     <title>Cody Codes</title>
 </head>
 <body>
-    <div class="container">
-        <header class="blog-header py-3">
-            <div class="row flex-nowrap justify-content-between align-items-center">
-                <div class="col"></div>
-                <div class="col-6 text-center">
-                    <a class="blog-header-logo text-dark" href="#contact">Cody Mumford</a>
+    <header>
+        <div class="bg-dark collapse" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">About</h4>
+                            <p class="text-muted">Software developer with a passion for technology, art, and beer.</p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contact</h4>
+                            <ul class="list-unstyled">
+                            <li>
+                                <a class="nav-link" href="mailto:cody.mumford9106@hotmail.com"><i class="fas fa-envelope-square"></i></a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="http://github.com/cody-mumford9106"><i class="fab fa-github-alt"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://twitter.com/Cody_Mumford"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.linkedin.com/in/cody-mumford-96b078158/"><i class="fab fa-linkedin-in"></i></a>
+                            </li>
+                            </ul>
+                    </div>
                 </div>
-                <div class="col"></div>
             </div>
-            <div class="row flex-nowrap justify-content-between align-items-center">
-                    <div class="col"></div>
-                    <div class="col-6 text-center">Software Developer with a passion for video games, art, and beer.</div>
-                    <div class="col"></div>
+        </div>
+        <div class="navbar navbar-dark bg-dark shadow-sm">
+            <div class="container d-flex justify-between">
+                <a class="navbar-brand" href="index.html">
+                            Cody Mumford
+                        </a>
+                        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+
                 </div>
-        </header>
+            </header>
+    <div class="container">
+
         <div class="jumbotron">
         
         <h1 id="projects">My Projects</h1>
@@ -31,9 +58,10 @@
         <h3>Pizza Madness</h3>
         <p>
             I deliver pizza and find tracking some of my data annoying. 
-            This .NET core web api makes it easy to gather data for pizza delivery drivers.
-            Utilizes entity framework, object oriented programming, and MongoDB.
-         </p>
+            This .NET core web api makes it easy to gather data for pizza delivery drivers
+            utilizes object oriented programming and MongoDB to create records for tips.
+
+        </p>
         
         <h3> Personal Customer Health Record </h3>
         <p>

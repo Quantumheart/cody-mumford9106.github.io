@@ -1,9 +1,5 @@
-.blog-header-logo
-{
-    font-size: 2rem;
+.nav-link {
+    display: inline-flex;
+    padding: .5rem 1rem;
+    float: left;
 }
-#contact
-{
-    list-style-type: none;
-}
-
