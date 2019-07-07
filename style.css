@@ -1,10 +1,78 @@
+.jumbotron
+{
+    margin: 1rem;
+}
+
 .nav-link {
     display: inline-flex;
     padding: .5rem 1rem;
     float: left;
 }
 
+#footy
+{
+    margin: 1rem;
+}
+
+#social_icons{
+    display: flex;
+    float: right;
+}
+
+.footer-link
+{
+    display: inline-flex;
+    padding: .5rem 1rem;
+    float: left;   
+}
+
 #projects
 {
     text-align: center;
+}
+
+.nav-link {
+    display: inline-flex;
+    padding: .5rem 1rem;
+    float: left;
+}
+
+#cards 
+{
+    margin: 1rem;
+}
+
+#bookForm
+{
+    margin: 1rem;
+}
+
+.card
+{
+    border-radius: 1rem;
+    margin: .5rem;
+}
+
+#pic
+{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 3rem;
+
+}
+
+#headline
+{
+    margin: 1rem .5rem;
+}
+
+#title
+{
+    font-size: 1.75rem;
+    padding: 1rem;
+}
+
+.button
+{
+    padding: .2rem;
 }
