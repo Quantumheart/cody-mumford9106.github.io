@@ -3,14 +3,14 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
-    <title>To Read List</title>
+    <link rel="icon" href="Images/CODYCODESIcon.png" type="image/png" height="16" width="16">
+    <title> Cody Codes</title>
 </head>
 
 <body>
@@ -41,37 +41,24 @@
 
     </header>
     <div class="container">
-        <div class="row">
 
-            <div class="col-md-8" id="bookList">
-                <h3>To Read List: </h3>
+        <div class="row justify-content-center">
+            <div id="BeerMe" class="col">
+                <button id="BeerMe" type="button" class="btn btn-primary">Beer Me</button>
             </div>
-            <div class="col justify-content-center">
+            <div id="randomBeer" class="col">
 
-                <form id="bookForm">
-                    <h4>Add a Book to the Library</h4>
-                    <div class="form-group">
-                        <input name="title" type="text" id="titleField" placeholder="Title" required>
-                    </div>
-                    <div class="form-group">
-                        <input name="author" type="text" id="authorField" placeholder="Author" required>
-                    </div>
-                    <div class="form-group">
-                        <input name="description" type="text" id="descriptionField" placeholder="Description" required>
-                    </div>
-                    <div class="form-group">
-                        <input name="pages" type="number" id="numPagesField" placeholder="Number of Pages" min="1"
-                            max="10000" required>
-                    </div>
-                    <div class="form-check">
-                        <input name="read" type="checkbox" class="form-check-input" id="readCheck" value="Read">
-                        <label class="form-check-label" for="readCheck">Read?</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary" id="addBook">Add Book</button>
-                </form>
             </div>
         </div>
     </div>
+
+    <footer>
+        <i class="fas fa-copyright"></i>
+        <strong>Cody Mumford</strong>
+        <em>2019</em>
+    </footer>
+    </div>
+    <script src="Scripts/beerMe.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
@@ -81,7 +68,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
     </script>
-    <script src="Scripts/readThatBook.js"></script>
+
 </body>
 
 </html>
