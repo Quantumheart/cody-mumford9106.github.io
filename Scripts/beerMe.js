@@ -6,11 +6,8 @@ button.addEventListener('click', async function (e) {
     let url = 'https://api.openbrewerydb.org/breweries/' + getRandomInt(600);
 
     const response = await fetch(url);
-    console.dir(response);
-    const beer = await response.json();
-    console.log('The brewery is: ');
-    console.dir(beer);
-    console.log(beer.name);
+    const brewery = await response.json();
+
 
     const card = document.createElement('div');
     card.setAttribute('class', 'card');
@@ -20,13 +17,21 @@ button.addEventListener('click', async function (e) {
 
     const h5 = document.createElement('h5');
     h5.setAttribute('class', 'card-title');
-    h5.setAttribute('id', 'beerName');
-    h5.innerHTML = 'The random brewery is: ' + beer.name;
+    h5.setAttribute('id', 'breweryName');
+    h5.innerHTML = 'The random brewery is: ' + brewery.name;
+    const location = brewery.city + ', ' + brewery.state;
+
+    const p = document.createElement('p');
+    p.setAttribute('class', 'card-text');
+    p.setAttribute('id', 'brewery');
+    p.innerHTML = 'Phone: ' + brewery.phone + '<br>' + 'City, State: ' + location;
 
     const randomBeer = document.getElementById('randomBeer');
+    randomBeer.removeChild(randomBeer.childNodes[0]);
     randomBeer.appendChild(card);
     card.appendChild(cardBody);
     cardBody.appendChild(h5);
+    cardBody.appendChild(p);
 
 })
 
