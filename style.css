@@ -45,6 +45,14 @@ h1{
     float: left;
 }
 
+body
+{
+    
+    font-family: "Times New Roman", Times, serif;
+    background-color: #333;
+    color: #fff;
+}
+
 #cards 
 {
     margin: 1rem;
@@ -59,6 +67,10 @@ h1{
 {
     border-radius: 1rem;
     margin: .5rem;
+}
+.card-body
+{
+    color: #000;
 }
 
 #pic
