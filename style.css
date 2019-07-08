@@ -31,6 +31,14 @@
     text-align: center;
 }
 
+#tagline{
+    margin-left: 1.5rem;
+}
+
+h1{
+    margin-bottom: .2rem;
+}
+
 .nav-link {
     display: inline-flex;
     padding: .5rem 1rem;
@@ -55,10 +63,9 @@
 
 #pic
 {
-    width: 6rem;
     height: 6rem;
     border-radius: 3rem;
-
+    margin: 1rem;
 }
 
 #headline
