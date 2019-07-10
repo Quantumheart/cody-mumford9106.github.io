@@ -1,9 +1,14 @@
 'use strict';
 
-var button = document.getElementById('BeerMe');
+const states = ['alabama', 'alaska', 'arizona', 'arkansas',
+    'california', 'colorado', 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii'
+];
+
+let button = document.getElementById('BeerMe');
 
 button.addEventListener('click', async function (e) {
-    let url = 'https://api.openbrewerydb.org/breweries/' + getRandomInt(600);
+    let url = 'https://api.openbrewerydb.org/breweries/' + getRandomInt(1000);
+
 
     const response = await fetch(url);
     const brewery = await response.json();
@@ -33,7 +38,26 @@ button.addEventListener('click', async function (e) {
     cardBody.appendChild(h5);
     cardBody.appendChild(p);
 
-})
+});
+const stateMenu = document.getElementById('StateMenu');
+stateMenu.addEventListener('load', addStates(states));
+
+function addStates(states) {
+    states.forEach(state => {
+        console.dir(state);
+        const stateButton = document.createElement('button');
+        stateButton.setAttribute('class', 'dropdown-item');
+        stateButton.setAttribute('type', 'button');
+        stateButton.setAttribute('value', state);
+        stateButton.innerHTML = state.toUpperCase();
+        stateMenu.appendChild(stateButton);
+    });
+};
+
+function filterByState(input) {
+    return '?by_name=' + input;
+};
+
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));

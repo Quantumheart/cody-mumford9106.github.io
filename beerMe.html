@@ -43,10 +43,23 @@
     <div class="container">
 
         <div class="row justify-content-center">
-            <div id="BeerMe" class="col-sm-1">
-                <button id="BeerMe" type="button" class="btn btn-outline-primary btn-lg">Beer Me</button>
+            <div class="col-sm-2">
+                <button id="BeerMe" type="button" class="btn btn-outline-primary btn-lg">Beer Me Random</button>
+
             </div>
+            <div class="col-sm-4">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="FilterByState"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Filter by State
+                        </button>
+                        <div id="StateMenu" class="dropdown-menu" aria-labelledby="FilterByState">
+        
+                        </div>
+                    </div>
+                </div>
         </div>
+
         <div class="row justify-content-center">
             <div id="randomBeer" class="col-sm-4">
 
