@@ -3,7 +3,7 @@
 const states = ['alabama', 'alaska', 'arizona', 'arkansas',
     'california', 'colorado', 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii',
     'idaho', 'illinois', 'indiana', 'iowa', 'indiana', 'kansas', 'kentucky', 'louisana',
-    'maine', 'maryland', 'massachusetts', 'michigan', 'michigan', 'minnesota', 'mississippi',
+    'maine', 'maryland', 'massachusetts', 'michigan', 'minnesota', 'mississippi',
     'missouri', 'montana', 'nebraska', 'nevada', 'new_hampshire', 'new_jersey', 'new_mexico',
     'new_york', 'north_carolina', 'north_dakota', 'ohio', 'oklahoma', 'oregon', 'pennsylvania',
     'rhode_island', 'south_carolina', 'south_dakota', 'tennessee', 'texas', 'utah', 'vermont',
