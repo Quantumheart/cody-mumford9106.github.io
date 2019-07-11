@@ -4,7 +4,7 @@ const states = ['alabama', 'alaska', 'arizona', 'arkansas',
     'california', 'colorado', 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii',
     'idaho', 'illinois', 'indiana', 'iowa', 'indiana', 'kansas', 'kentucky', 'louisana',
     'maine', 'maryland', 'massachusetts', 'michigan', 'michigan', 'minnesota', 'mississippi',
-    'missouri', 'montana', 'nebraska', 'nevada', 'new_hampshire','new_jersey', 'new_mexico',
+    'missouri', 'montana', 'nebraska', 'nevada', 'new_hampshire', 'new_jersey', 'new_mexico',
     'new_york', 'north_carolina', 'north_dakota', 'ohio', 'oklahoma', 'oregon', 'pennsylvania',
     'rhode_island', 'south_carolina', 'south_dakota', 'tennessee', 'texas', 'utah', 'vermont',
     'virginia', 'washington', 'west_virginia', 'wisconsin', 'wyoming'
@@ -64,19 +64,31 @@ function addStates(states) {
 
 let dropdownList = document.getElementById('StateMenu');
 dropdownList.addEventListener('click', async function (e) {
-    
+
     let state = e.target.id;
 
     let url = 'https://api.openbrewerydb.org/breweries' + filterByState(state);
-
     const response = await fetch(url);
     const brewery = await response.json();
-    let h3 = document.createElement('h3');
+    
+
+    const list = document.createElement('div');
+    list.setAttribute('id', 'list' + e.target.id);
 
     let breweryList = document.getElementById('breweryList');
+
+    breweryList.appendChild(list);
+    let h3 = document.createElement('h3');
     h3.innerHTML = "Breweries in: " + state;
-    breweryList.appendChild(h3);
-    for (var i = 0; i < brewery.length; i++) {
+    list.appendChild(h3);
+
+    if (breweryList.childNodes.length > 2) {
+        removeChildren(breweryList)
+    }
+
+
+    for (var i = 0; i < 5; i++) {
+
         const card = document.createElement('div');
         card.setAttribute('class', 'card');
 
@@ -93,14 +105,28 @@ dropdownList.addEventListener('click', async function (e) {
         p.setAttribute('class', 'card-text');
         p.setAttribute('id', 'brewery');
         p.innerHTML = 'Phone: ' + brewery[i].phone + '<br>' + 'City, State: ' + location;
+        /**
+         * Need to remove prior entries of breweries
+         * 
+         * 
+         * * */
 
-        breweryList.appendChild(card);
+        list.appendChild(card);
         card.appendChild(cardBody);
         cardBody.appendChild(h5);
         cardBody.appendChild(p);
     }
 
+
 });
+
+function removeChildren(params) {
+
+    let childId = params.children[0].id;
+    let listToRemove = document.getElementById(childId);
+
+    params.removeChild(listToRemove);
+}
 
 function filterByState(input) {
     return '?by_state=' + input;
