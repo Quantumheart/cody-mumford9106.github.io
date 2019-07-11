@@ -19,30 +19,7 @@ button.addEventListener('click', async function (e) {
     const response = await fetch(url);
     const brewery = await response.json();
 
-
-    const card = document.createElement('div');
-    card.setAttribute('class', 'card');
-
-    const cardBody = document.createElement('div');
-    cardBody.setAttribute('class', 'card-body');
-
-    const h5 = document.createElement('h5');
-    h5.setAttribute('class', 'card-title');
-    h5.setAttribute('id', 'breweryName');
-    h5.innerHTML = 'Brewery: ' + brewery.name;
-    const location = brewery.city + ', ' + brewery.state;
-
-    const p = document.createElement('p');
-    p.setAttribute('class', 'card-text');
-    p.setAttribute('id', 'brewery');
-    p.innerHTML = 'Phone: ' + brewery.phone + '<br>' + 'City, State: ' + location;
-
-    const randomBeer = document.getElementById('randomBeer');
-    randomBeer.removeChild(randomBeer.childNodes[0]);
-    randomBeer.appendChild(card);
-    card.appendChild(cardBody);
-    cardBody.appendChild(h5);
-    cardBody.appendChild(p);
+    populateCard(brewery);
 
 });
 
@@ -89,6 +66,33 @@ dropdownList.addEventListener('click', async function (e) {
 
 
 });
+
+function populateCard(brewery) {
+
+    const card = document.createElement('div');
+    card.setAttribute('class', 'card');
+
+    const cardBody = document.createElement('div');
+    cardBody.setAttribute('class', 'card-body');
+
+    const h5 = document.createElement('h5');
+    h5.setAttribute('class', 'card-title');
+    h5.setAttribute('id', 'breweryName');
+    h5.innerHTML = 'Brewery: ' + brewery.name;
+    const location = brewery.city + ', ' + brewery.state;
+
+    const p = document.createElement('p');
+    p.setAttribute('class', 'card-text');
+    p.setAttribute('id', 'brewery');
+    p.innerHTML = 'Phone: ' + brewery.phone + '<br>' + 'City, State: ' + location;
+
+    const randomBeer = document.getElementById('randomBeer');
+    randomBeer.removeChild(randomBeer.childNodes[0]);
+    randomBeer.appendChild(card);
+    card.appendChild(cardBody);
+    cardBody.appendChild(h5);
+    cardBody.appendChild(p);
+}
 
 function populateCards(parent, brewery) {
     for (var i = 0; i < 5; i++) {
