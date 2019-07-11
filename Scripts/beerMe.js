@@ -78,7 +78,7 @@ function populateCard(brewery) {
     const h5 = document.createElement('h5');
     h5.setAttribute('class', 'card-title');
     h5.setAttribute('id', 'breweryName');
-    h5.innerHTML = 'Brewery: ' + brewery.name;
+    h5.innerHTML = 'Brewery Name: ' + brewery.name;
     const location = brewery.city + ', ' + brewery.state;
 
     const p = document.createElement('p');
