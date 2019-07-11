@@ -47,7 +47,7 @@ dropdownList.addEventListener('click', async function (e) {
     let url = 'https://api.openbrewerydb.org/breweries' + filterByState(state);
     const response = await fetch(url);
     const brewery = await response.json();
-
+    console.dir(brewery);
 
     const list = document.createElement('div');
     list.setAttribute('id', 'list' + e.target.id);
@@ -79,12 +79,12 @@ function populateCard(brewery) {
     h5.setAttribute('class', 'card-title');
     h5.setAttribute('id', 'breweryName');
     h5.innerHTML = 'Brewery Name: ' + brewery.name;
-    const location = brewery.city + ', ' + brewery.state;
+    const location = brewery.street + ', ' + brewery.city + ', ' + brewery.state;
 
     const p = document.createElement('p');
     p.setAttribute('class', 'card-text');
     p.setAttribute('id', 'brewery');
-    p.innerHTML = 'Phone: ' + brewery.phone + '<br>' + 'City, State: ' + location;
+    p.innerHTML = 'Phone: ' + brewery.phone + '<br>' + 'Street, City, State: ' + location;
 
     const randomBeer = document.getElementById('randomBeer');
     randomBeer.removeChild(randomBeer.childNodes[0]);
@@ -106,12 +106,12 @@ function populateCards(parent, brewery) {
         h5.setAttribute('class', 'card-title');
         h5.setAttribute('id', 'breweryName');
         h5.innerHTML = 'Brewery Name: ' + brewery[i].name;
-        const location = brewery[i].city + ', ' + brewery[i].state;
+        const location = brewery[i].street + ', ' + brewery[i].city + ', ' + brewery[i].state;
 
         const p = document.createElement('p');
         p.setAttribute('class', 'card-text');
         p.setAttribute('id', 'brewery');
-        p.innerHTML = 'Phone: ' + brewery[i].phone + '<br>' + 'City, State: ' + location;
+        p.innerHTML = 'Phone: ' + brewery.phone + '<br>' + 'Street, City, State: ' + location;
 
         parent.appendChild(card);
         card.appendChild(cardBody);
