@@ -2,7 +2,12 @@
 
 const states = ['alabama', 'alaska', 'arizona', 'arkansas',
     'california', 'colorado', 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii',
-
+    'idaho', 'illinois', 'indiana', 'iowa', 'indiana', 'kansas', 'kentucky', 'louisana',
+    'maine', 'maryland', 'massachusetts', 'michigan', 'michigan', 'minnesota', 'mississippi',
+    'missouri', 'montana', 'nebraska', 'nevada', 'new_hampshire','new_jersey', 'new_mexico',
+    'new_york', 'north_carolina', 'north_dakota', 'ohio', 'oklahoma', 'oregon', 'pennsylvania',
+    'rhode_island', 'south_carolina', 'south_dakota', 'tennessee', 'texas', 'utah', 'vermont',
+    'virginia', 'washington', 'west_virginia', 'wisconsin', 'wyoming'
 ];
 
 let button = document.getElementById('BeerMe');
@@ -24,7 +29,7 @@ button.addEventListener('click', async function (e) {
     const h5 = document.createElement('h5');
     h5.setAttribute('class', 'card-title');
     h5.setAttribute('id', 'breweryName');
-    h5.innerHTML = 'The random brewery is: ' + brewery.name;
+    h5.innerHTML = 'Brewery: ' + brewery.name;
     const location = brewery.city + ', ' + brewery.state;
 
     const p = document.createElement('p');
@@ -63,13 +68,14 @@ dropdownList.addEventListener('click', async function (e) {
     let state = e.target.id;
 
     let url = 'https://api.openbrewerydb.org/breweries' + filterByState(state);
-    console.dir(url);
 
     const response = await fetch(url);
     const brewery = await response.json();
-    console.dir(brewery);
+    let h3 = document.createElement('h3');
+
     let breweryList = document.getElementById('breweryList');
-    breweryList.innerHTML = "Breweries in: " + state;
+    h3.innerHTML = "Breweries in: " + state;
+    breweryList.appendChild(h3);
     for (var i = 0; i < brewery.length; i++) {
         const card = document.createElement('div');
         card.setAttribute('class', 'card');
@@ -88,8 +94,6 @@ dropdownList.addEventListener('click', async function (e) {
         p.setAttribute('id', 'brewery');
         p.innerHTML = 'Phone: ' + brewery[i].phone + '<br>' + 'City, State: ' + location;
 
-
-        //randomBeer.removeChild(randomBeer.childNodes[0]);
         breweryList.appendChild(card);
         card.appendChild(cardBody);
         cardBody.appendChild(h5);
