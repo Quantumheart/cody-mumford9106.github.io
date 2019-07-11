@@ -111,7 +111,7 @@ function populateCards(parent, brewery) {
         const p = document.createElement('p');
         p.setAttribute('class', 'card-text');
         p.setAttribute('id', 'brewery');
-        p.innerHTML = 'Phone: ' + brewery.phone + '<br>' + 'Street, City, State: ' + location;
+        p.innerHTML = 'Phone: ' + brewery[i].phone + '<br>' + 'Street, City, State: ' + location;
 
         parent.appendChild(card);
         card.appendChild(cardBody);
