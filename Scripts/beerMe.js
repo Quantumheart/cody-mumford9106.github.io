@@ -92,7 +92,7 @@ function populateCard(brewery) {
     card.appendChild(cardBody);
     cardBody.appendChild(h5);
     cardBody.appendChild(p);
-}
+};
 
 function populateCards(parent, brewery) {
     for (var i = 0; i < 5; i++) {
@@ -117,8 +117,8 @@ function populateCards(parent, brewery) {
         card.appendChild(cardBody);
         cardBody.appendChild(h5);
         cardBody.appendChild(p);
-    }
-}
+    };
+};
 
 function removeChildren(params) {
 
@@ -126,7 +126,7 @@ function removeChildren(params) {
     let listToRemove = document.getElementById(childId);
 
     params.removeChild(listToRemove);
-}
+};
 
 function filterByState(input) {
     return '?by_state=' + input;
@@ -135,4 +135,4 @@ function filterByState(input) {
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * Math.floor(max));
-}
+};
