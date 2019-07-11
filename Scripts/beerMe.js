@@ -70,7 +70,7 @@ dropdownList.addEventListener('click', async function (e) {
     let url = 'https://api.openbrewerydb.org/breweries' + filterByState(state);
     const response = await fetch(url);
     const brewery = await response.json();
-    
+
 
     const list = document.createElement('div');
     list.setAttribute('id', 'list' + e.target.id);
@@ -85,10 +85,13 @@ dropdownList.addEventListener('click', async function (e) {
     if (breweryList.childNodes.length > 2) {
         removeChildren(breweryList)
     }
+    populateCards(list, brewery);
 
 
+});
+
+function populateCards(parent, brewery) {
     for (var i = 0; i < 5; i++) {
-
         const card = document.createElement('div');
         card.setAttribute('class', 'card');
 
@@ -105,20 +108,13 @@ dropdownList.addEventListener('click', async function (e) {
         p.setAttribute('class', 'card-text');
         p.setAttribute('id', 'brewery');
         p.innerHTML = 'Phone: ' + brewery[i].phone + '<br>' + 'City, State: ' + location;
-        /**
-         * Need to remove prior entries of breweries
-         * 
-         * 
-         * * */
 
-        list.appendChild(card);
+        parent.appendChild(card);
         card.appendChild(cardBody);
         cardBody.appendChild(h5);
         cardBody.appendChild(p);
     }
-
-
-});
+}
 
 function removeChildren(params) {
 
