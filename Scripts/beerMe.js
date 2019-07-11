@@ -1,13 +1,14 @@
 'use strict';
 
 const states = ['alabama', 'alaska', 'arizona', 'arkansas',
-    'california', 'colorado', 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii'
+    'california', 'colorado', 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii',
+
 ];
 
 let button = document.getElementById('BeerMe');
 
 button.addEventListener('click', async function (e) {
-    let url = 'https://api.openbrewerydb.org/breweries/' + getRandomInt(1000);
+    let url = 'https://api.openbrewerydb.org/breweries/' + getRandomInt(6000);
 
 
     const response = await fetch(url);
