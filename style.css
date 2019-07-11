@@ -31,6 +31,11 @@
     margin-left: 1.5rem;
 }
 
+.col-sm-6
+{
+    text-align: center;
+}
+
 h1 {
     margin-bottom: .2rem;
 }
@@ -63,6 +68,7 @@ body {
 
 .card-body {
     color: #000;
+    text-align: left;
 }
 
 .dropdown-item {
