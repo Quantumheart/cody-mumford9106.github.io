@@ -57,7 +57,7 @@ const bookList = document.getElementById('bookList');
 bookList.addEventListener('load', createBookCard(myLibrary));
 
 function createBookCard(myLibrary) {
-    for (var i = 0; i < myLibrary.length; i++ )
+    for (let i = 0; i < myLibrary.length; i++ )
     /* myLibrary.forEach(book =>  */{
         let book = myLibrary[i];
         const card = document.createElement('div');
